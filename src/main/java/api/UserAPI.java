@@ -1,6 +1,5 @@
 package api;
 
-import classes.ResponseUser;
 import classes.User;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;

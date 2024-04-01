@@ -6,8 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
 public class LoginPageBurgers {
     private final WebDriver driver;
     public LoginPageBurgers(WebDriver driver) {
@@ -38,15 +36,9 @@ public class LoginPageBurgers {
         driver.findElement(loginLink).click();
     }
 
-    @Step("wait login page")
-    public void waitForLoginData() {
-        new WebDriverWait(driver,  Duration.ofSeconds(10)).until(driver -> (driver.findElement(loginButton).getText() != null
-        ));
-    }
-
     @Step("wait authorization page")
     public void waitForAuthorizationData() {
-        new WebDriverWait(driver,  Duration.ofSeconds(10)).until(driver -> (driver.findElement(authorizationPage).getText() != null
+        new WebDriverWait(driver,  10).until(driver -> (driver.findElement(authorizationPage).getText() != null
         ));
     }
 

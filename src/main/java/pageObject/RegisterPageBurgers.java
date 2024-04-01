@@ -6,14 +6,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
 public class RegisterPageBurgers {
     private final WebDriver driver;
     public RegisterPageBurgers(WebDriver driver) {
         this.driver = driver;
     }
-    private final By loginButton = By.xpath(".//button[text()='Войти']");
+    private final By loginButton = By.xpath("//*[@id='root']/div/main/div/form/button[text()='Войти']");
     private final By warningText = By.xpath("//*[@id='root']/div/main/div/form/fieldset[3]/div/p");
     private final By nameField = By.xpath(".//fieldset[1]/div/div/input[contains(@class, 'input__textfield')]");
     private final By emailField = By.xpath(".//fieldset[2]/div/div/input[contains(@class, 'input__textfield')]");
@@ -33,14 +31,13 @@ public class RegisterPageBurgers {
 
     @Step("wait login page")
     public void waitForLoginData() {
-        new WebDriverWait(driver,  Duration.ofSeconds(10)).until(driver -> (driver.findElement(loginButton).getText() != null
+        new WebDriverWait(driver, 15).until(driver -> (driver.findElement(loginButton).getText() != null
         ));
     }
 
     @Step("check displayed login page")
     public String displayedLoginPage() {
         WebElement loginElement = driver.findElement(loginButton);
-        waitForLoginData();
         loginElement.isDisplayed();
         return loginElement.getText();
     }
