@@ -1,4 +1,4 @@
-package pageObject;
+package ru.praktikum.burgers.page.object;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
@@ -14,9 +14,10 @@ public class CrossToSectionBurgers {
     public CrossToSectionBurgers(WebDriver driver) {
         this.driver = driver;
     }
-    private final By bunsSection = By.xpath("//*[@id='root']/div/main/section[1]/div[1]/div[1]");
-    private final By sauceSection = By.xpath("//*[@id='root']/div/main/section[1]/div[1]/div[2]");
-    private final By toppingSection = By.xpath("//*[@id='root']/div/main/section[1]/div[1]/div[3]");
+    private final By bunsSection = By.xpath("//div[contains(@class, 'tab_tab__1SPyG')]/span[text()='Булки']/parent::div");
+    private final By sauceSection =  By.xpath("//div[contains(@class, 'tab_tab__1SPyG')]/span[text()='Соусы']/parent::div");
+    private final By toppingSection =  By.xpath("//div[contains(@class, 'tab_tab__1SPyG')]/span[text()='Начинки']/parent::div");
+
     String name;
     private final By bunHeader = By.xpath(".//div[@class='BurgerIngredients_ingredients__menuContainer__Xu3Mo']/h2[1]");
 
@@ -45,13 +46,13 @@ public class CrossToSectionBurgers {
     public String displayedSection(String section) {
         WebElement authorizationElement = null;
         if (Objects.equals(section, "Булки")) {
-            authorizationElement = driver.findElement(bunsSection);
+            authorizationElement = driver.findElement(bunHeader);
         }
         else if (Objects.equals(section, "Соусы")) {
             authorizationElement = driver.findElement(sauceHeader);
         }
         else if (Objects.equals(section, "Начинки")) {
-            authorizationElement = driver.findElement(toppingSection);
+            authorizationElement = driver.findElement(toppingHeader);
         }
         authorizationElement.isDisplayed();
         return authorizationElement.getText();

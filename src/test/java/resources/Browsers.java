@@ -8,15 +8,14 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class Browsers {
 
     public WebDriver getDriver(String browser) {
-        String driverType = System.getenv("BROWSER");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox", "--headless", "--disable-dev-shm-usage");
 
-        if (driverType == null){
+        if (browser == null){
             System.setProperty("webdriver.chrome.driver", "src//test//java//resources//chromedriver.exe");
             return new ChromeDriver(options);
         }
-         switch (driverType.toLowerCase()) {
+         switch (browser.toLowerCase()) {
              case "chrome":
                  System.setProperty("webdriver.chrome.driver", "src//test//java//resources//chromedriver.exe");
                  return new ChromeDriver(options);

@@ -1,4 +1,4 @@
-package pageObject;
+package ru.praktikum.burgers.page.object;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
@@ -10,7 +10,7 @@ public class CrossToProfilePageBurgers {
     public CrossToProfilePageBurgers(WebDriver driver) {
         this.driver = driver;
     }
-    private final By headerButton = By.xpath("//*[@id='root']/div/header/nav/a");
+    private final By headerButton = By.xpath("//p[text()='Личный Кабинет']/parent::a");
     private final By profilePage = By.xpath(".//a[contains(@class, 'Account_link_active__2opc9')]");
 
     @Step("click on button 'Личный кабинет'")

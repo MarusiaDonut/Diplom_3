@@ -1,6 +1,6 @@
-package api;
+package ru.praktikum.burgers.api.client;
 
-import classes.User;
+import ru.praktikum.burgers.api.model.User;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
 

@@ -1,4 +1,4 @@
-package pageObject;
+package ru.praktikum.burgers.page.object;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
@@ -10,7 +10,7 @@ public class LogoutPageBurgers {
     public LogoutPageBurgers(WebDriver driver) {
         this.driver = driver;
     }
-    private final By logoutButton = By.xpath("//*[@id='root']/div/main/div/nav/ul/li[3]/button");
+    private final By logoutButton = By.xpath(".//button[text()='Выход']");
 
     private final By loginText = By.xpath(".//div[@class='Auth_login__3hAey']/h2");
 

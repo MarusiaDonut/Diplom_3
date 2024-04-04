@@ -1,10 +1,10 @@
 package tests;
 
-import api.UserAPI;
-import classes.ResponseUser;
-import classes.User;
-import constants.Browser;
-import constants.Link;
+import ru.praktikum.burgers.api.client.UserAPI;
+import ru.praktikum.burgers.api.model.ResponseUser;
+import ru.praktikum.burgers.api.model.User;
+import ru.praktikum.burgers.constants.Browser;
+import ru.praktikum.burgers.constants.Link;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.After;
@@ -14,7 +14,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
-import pageObject.LoginPageBurgers;
+import ru.praktikum.burgers.page.object.LoginPageBurgers;
 import resources.Browsers;
 
 import java.util.concurrent.TimeUnit;
@@ -27,6 +27,7 @@ public class LoginTest {
     Browsers browsers = new Browsers();
     User user = new User("test_ui1@yandex.ru", "123456", "TestMashaLoginUser");
     ResponseUser responseUser = new ResponseUser();
+    BaseTest baseTest = new BaseTest();
     private final int button;
     private final String link;
 

@@ -1,4 +1,4 @@
-package pageObject;
+package ru.praktikum.burgers.page.object;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
@@ -10,7 +10,7 @@ public class CrossToMainPageBurgers {
     public CrossToMainPageBurgers(WebDriver driver) {
         this.driver = driver;
     }
-    private final By constructorLink = By.xpath("//*[@id='root']/div/header/nav/ul/li[1]/a");
+    private final By constructorLink = By.className("AppHeader_header__link__3D_hX");
     private final By logoLink = By.xpath(".//div[@class='AppHeader_header__logo__2D0X2']/a");
     private final By mainPage = By.xpath(".//section[@class='BurgerIngredients_ingredients__1N8v2']/h1");
 

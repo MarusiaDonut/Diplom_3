@@ -1,13 +1,13 @@
 package tests;
 
-import api.UserAPI;
-import classes.ResponseUser;
-import classes.User;
-import constants.Browser;
-import constants.Link;
+import ru.praktikum.burgers.api.client.UserAPI;
+import ru.praktikum.burgers.api.model.ResponseUser;
+import ru.praktikum.burgers.api.model.User;
+import ru.praktikum.burgers.constants.Browser;
+import ru.praktikum.burgers.constants.Link;
 import io.restassured.response.Response;
 import org.junit.Assert;
-import pageObject.RegisterPageBurgers;
+import ru.praktikum.burgers.page.object.RegisterPageBurgers;
 import io.restassured.RestAssured;
 import org.junit.After;
 import org.junit.Before;

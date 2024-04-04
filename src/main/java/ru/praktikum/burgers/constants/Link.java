@@ -1,4 +1,4 @@
-package constants;
+package ru.praktikum.burgers.constants;
 
 public class Link {
     public static final String MAIN_PAGE = "https://stellarburgers.nomoreparties.site/";
